@@ -1,0 +1,19 @@
+name: Brunoczim - GH Pages
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: build_and_deploy
+        uses: shalzz/zola-deploy-action@v0.16.1-1
+        env:
+          PAGES_BRANCH: gh-pages
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
