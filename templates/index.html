@@ -4,12 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ config.base_url }}index.css">
-        <title>{{ section.title }}</title>
+        <title>
+            {% if page %}
+                {{ page.title | safe }}
+            {% elif section %}
+                {{ section.title | safe }}
+            {% endif %}
+        </title>
     </head>
     <body>
-        <div id="banner">Brunoczim's Personal Site</div>
-        <div id="root">
-            {{ section.content | safe }}
+        <div id="banner">
+            <a href="{{ config.base_url }}">Brunoczim's Personal Site</a>
+        </div>
+        <div id="wrapper">
+            <div id="root">
+                {% if page %}
+                    {{ page.content | safe }}
+                {% elif section %}
+                    {{ section.content | safe }}
+                {% endif %}
+            </div>
         </div>
     </body>
 </html>

@@ -1,16 +1,15 @@
 $bg-primary: #36263F;
+$bg-secondary: #231E26;
 $text-primary: #DED3ED;
 $text-link: #AAC1F7;
 $text-visited: #95ABDE;
-
-$margin-x: 10pt;
 
 * {
     padding: 0;
     margin: 0;
     font-family:
         "Fira Sans", "Liberation Sans", "Noto Sans", "Arial", sans-serif;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 html, body {
@@ -32,13 +31,13 @@ a:visited {
     color: $text-visited;
 }
 
-#root {
-    margin: 2rem;
+#banner a {
+    color: $text-primary;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 #banner {
-    font-weight: bold;
-    font-size: 1.5rem;
     background: #4A3356;
     text-align: center;
     padding: 1rem;
@@ -46,11 +45,27 @@ a:visited {
     top: 0;
 }
 
+#wrapper {
+    margin: 20pt 14pt;
+}
+
+#root {
+    margin: 0 auto;
+    width: auto;
+    max-width: 800px;
+}
+
+p {
+    margin: 14pt 10pt;
+    text-indent: 2.5rem;
+}
+
 p, li {
-    margin: 5pt $margin-x;
+    line-height: 1.5;
 }
 
 li {
+    margin: 0 10pt;
     margin-left: 20pt;
 }
 
@@ -59,22 +74,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+    font-size: 1.9rem;
+}
+
+h2 {
     font-size: 1.5rem;
 }
 
-h2 {
-    font-size: 1.4rem;
-}
-
 h3 {
-    font-size: 1.3rem;
+    font-size: 1.35em;
 }
 
-h2 {
-    font-size: 1.2rem;
+h4 {
+    font-size: 1.2em;
 }
 
-h1 {
+h5 {
     font-size: 1.1rem;
 }
 
+h6 {
+    font-size: 1.0rem;
+}
+
+code {
+    font-family: "Fira Code", consolas, "Liberation Mono", monospace;
+    background: $bg-secondary;
+}
