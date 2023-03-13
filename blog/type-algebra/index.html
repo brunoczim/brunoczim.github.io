@@ -18,18 +18,72 @@
             <div id="root">
                 
                     <h1 id="type-algebra">Type Algebra</h1>
-<h2 id="introduction">Introduction</h2>
+<h2 id="what-are-algebraic-data-types">What Are Algebraic Data Types?</h2>
 <p>Data types in programming come in all flavours, and to many programmers, the
 theories behind them pass unnoticed. In this post I will explain one of these
 theories: algebraic data types. Have you ever used a struct/record in your
 favourite programming language? That is an algebraic data types. Have your ever
 hard about &quot;sum types&quot;? That is also an algebraic data type!</p>
 <p>Algebraic data types (ADT) are a way of modelling the combination of data types
-using algebra as an analogy. As an example, a struct/record is also called
-<em>product type</em> because a record <code>C</code> that combines type <code>A</code> and type <code>B</code> has a
-total number of elements equals to total elements of <code>A</code> multiplied by total
-elements of <code>B</code>, i.e. <code>|C| = |A| * |B|</code>. This is a very similar concept to an
-ordered pair in set theory.</p>
+using algebra as an analogy. More specifically, the analogy is about the
+cardinality of types, i.e. total number of elements belonging to the type.
+As an example, a struct/record is also called <em>product type</em> because a record
+<code>C</code> that combines type <code>A</code> and type <code>B</code> has cardinality equals <code>A</code>'s  multiplied
+by <code>B</code>'s cardinality, i.e. <code>|C| = |A| * |B|</code>. This is a very similar concept to
+an ordered pair in set theory.</p>
+<p>Another example of algebraic data type is a sum type. As the name indicates, a
+sum type C combining types A and B has a total number of elements equals to the
+sum of total elements of <code>A</code> and total elements of <code>B</code>, i.e. <code>|C| = |A| + |B|</code>.
+This corresponds to disjoint unions in set theory, but not to regular unions.
+In fact, in contrary to set theory's unions, summing a type with itself produces
+a new type, as we'll see in a section below.</p>
+<p>There are other types, such as exponential types (whose cardinality you all
+might have guessed), unitary types and nullary types. As the names suggest,
+unitary types have one element, nullary types have no elements. In the following
+sections all of this will be explored in more details.</p>
+<h2 id="table-of-adts">Table of ADTs</h2>
+<table>
+    <tr>
+        <th>Names</th>
+        <th>Notations</th>
+        <th>Cardinality Formula</th>
+    </tr>
+    <tr>
+        <td>void type, bottom type, never type, nothing type</td>
+        <td><code>0</code>, <code>⊥</code></td>
+        <td><code>|0| = 0</code></td>
+    </tr>
+    <tr>
+        <td>unitary type, unit type, top type, void type (C-like)</td>
+        <td><code>1</code>, <code>⊤</code>, <code>()</code></td>
+        <td><code>|1| = 1</code></td>
+    </tr>
+    <tr>
+        <td>sum type, variant type, tagged union, discriminated union</td>
+        <td><code>A + B</code></td>
+        <td><code>|A + B| = |A| + |B|</code></td>
+    </tr>
+    <tr>
+        <td>product type, struct, record</td>
+        <td><code>A * B</code>, <code>(A, B)</code></td>
+        <td><code>|A * B| = |A| * |B|</code></td>
+    </tr>
+    <tr>
+        <td>exponential type, function type</td>
+        <td><code>B ^ A</code>, <code>A -> B</code></td>
+        <td><code>|B ^ A| = |B| ^ |A|</code></td>
+    </tr>
+    <tr>
+        <td>dependent sum type, dependent record</td>
+        <td><code>Σ(x : A). B(x)</code>,<br><code>(x : A, B(x))</code></td>
+        <td><code>|Σ(x : A). B(x)| = Σ(x : A). |B(x)|</code></td>
+    </tr>
+    <tr>
+        <td>dependent product type, dependent function</td>
+        <td class="no-break"><code>Π(x : A). B(x)</code>,<br><code>(x : A) -> B(x)</code></td>
+        <td class="no-break"><code>|Π(x : A). B(x)| = Π(x : A). |B(x)|</code></td>
+    </tr>
+</table>
 
                 
             </div>
