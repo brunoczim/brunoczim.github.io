@@ -52,7 +52,7 @@ a:visited {
 #root {
     margin: 0 auto;
     width: auto;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 p {
@@ -99,5 +99,22 @@ h6 {
 
 code {
     font-family: "Fira Code", consolas, "Liberation Mono", monospace;
+    font-size: 90%;
     background: $bg-secondary;
+    padding: 0 2pt;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 10pt 0;
+}
+
+th, td {
+    padding: 10pt;
+    border: 1px solid;
+}
+
+.no-break {
+    word-break: keep-all;
+    white-space: nowrap;
 }
