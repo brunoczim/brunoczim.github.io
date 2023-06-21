@@ -9,7 +9,6 @@ but with my main hobbies being linguistics and music.
 
 # Links
 
-- [My Resume/CV](brunoczim_cv.pdf)
 - [My old GitLab-hosted blog](https://bzim.gitlab.io/blog/)
 - [An introductory presentation about non-blocking algorithms](brunoczim_non_blocking.pdf)
 
